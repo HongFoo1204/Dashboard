@@ -15,7 +15,7 @@ export default function WelcomeBanner() {
       bg={'url(/banner-background.png)'}
       backgroundRepeat={'no-repeat'}
       backgroundSize={'100% 100%'}
-      w={'100%'}
+      w={'full'}
       h={'200px'}
       p={8}
     >

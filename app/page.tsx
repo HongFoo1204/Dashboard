@@ -22,6 +22,7 @@ import {
 import SectionContainer from '@/components/SectionContainer';
 import MyGoals from '@/components/Sections/MyGoals';
 import MyBusinessSummary from '@/components/Sections/MyBusinessSummary';
+import PaymentStatus from '@/components/Sections/PaymentStatus';
 
 export default function Home() {
   return (
@@ -33,12 +34,17 @@ export default function Home() {
             <MyGoals />
           </SectionContainer>
         </GridItem>
-        <GridItem colSpan={2}>
+        <GridItem colSpan={{ base: 3, lg: 2 }}>
           <SectionContainer title='My Business Summary'>
             <MyBusinessSummary />
           </SectionContainer>
         </GridItem>
       </Grid>
+      <Box mt={16}>
+        <SectionContainer title='Payment Status'>
+          <PaymentStatus />
+        </SectionContainer>
+      </Box>
     </Container>
   );
 }

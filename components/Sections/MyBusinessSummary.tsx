@@ -9,6 +9,8 @@ import {
   Text,
   Divider,
   Avatar,
+  Grid,
+  GridItem,
 } from '@chakra-ui/react';
 import { TbNotes, TbUser } from 'react-icons/tb';
 import { TfiStatsUp } from 'react-icons/tfi';
@@ -24,59 +26,69 @@ interface BusinessEstimatesItemProps {
 }
 
 const BusinessEstimatesItem = (props: BusinessEstimatesItemProps) => (
-  <VStack
-    w={36}
-    h={36}
-    justifyContent={'center'}
-    bgColor={props.bgColor}
-    border={props.borderColor ? '2px' : 'unset'}
-    borderColor={props.borderColor}
-    borderRadius={'2xl'}
-    p={4}
-  >
-    <Image
-      boxSize='8'
-      objectFit='cover'
-      overflow='visible'
-      src={props.imgSrc}
-      alt=''
-    />
-    <Text fontSize={'sm'} color={props.titleColor} textAlign={'center'}>
-      {props.title}
-    </Text>
-    <Text
-      as={'b'}
-      fontSize={'md'}
-      color={props.countColor}
-      textAlign={'center'}
+  <GridItem>
+    <VStack
+      h={36}
+      justifyContent={'center'}
+      bgColor={props.bgColor}
+      border={props.borderColor ? '2px' : 'unset'}
+      borderColor={props.borderColor}
+      borderRadius={'2xl'}
+      p={4}
     >
-      {props.count}
-    </Text>
-  </VStack>
+      <Image
+        boxSize='8'
+        objectFit='cover'
+        src={props.imgSrc}
+        alt={props.title}
+      />
+      <Text fontSize={'sm'} color={props.titleColor} textAlign={'center'}>
+        {props.title}
+      </Text>
+      <Text
+        as={'b'}
+        fontSize={'md'}
+        color={props.countColor}
+        textAlign={'center'}
+      >
+        {props.count}
+      </Text>
+    </VStack>
+  </GridItem>
 );
 
 export default function MyBusinessSummary() {
+  const businessEstimatesData = {
+    projects: 200,
+    assigned: 88,
+    completed: 120,
+    completionRate: 90,
+    statRate: 2.3,
+  };
+  const teamHours = 82;
+
   return (
     <HStack
-      w={'100%'}
+      w={'full'}
       h={'300px'}
       spacing={4}
       p={6}
       bgColor={'white'}
       borderRadius={'xl'}
+      boxShadow={'md'}
     >
-      <VStack spacing={6} alignItems={'flex-start'}>
+      <VStack w={'full'} spacing={6} alignItems={'flex-start'}>
         <HStack spacing={4}>
           <Icon as={TbNotes} boxSize={6} />
           <Heading as='h5' size='sm'>
             Business Estimates
           </Heading>
         </HStack>
-        <HStack spacing={4}>
+        <Grid templateColumns='repeat(3, 1fr)' gap={4} w={'full'}>
           <BusinessEstimatesItem
             imgSrc='/icons/icon-13.png'
             title='Projects'
-            count={200}
+            count={businessEstimatesData.projects}
             bgColor='blackAlpha.700'
             titleColor='white'
             countColor='white'
@@ -84,7 +96,7 @@ export default function MyBusinessSummary() {
           <BusinessEstimatesItem
             imgSrc='/icons/icon-11.png'
             title='Assigned'
-            count={88}
+            count={businessEstimatesData.assigned}
             bgColor='primary.400'
             titleColor='white'
             countColor='white'
@@ -92,20 +104,20 @@ export default function MyBusinessSummary() {
           <BusinessEstimatesItem
             imgSrc='/icons/icon-12.png'
             title='Completed'
-            count={120}
+            count={businessEstimatesData.completed}
             bgColor='white'
             titleColor='black'
             countColor='primary.500'
             borderColor='primary.100'
           />
-        </HStack>
-        <Flex w={'100%'} justifyContent={'space-between'}>
+        </Grid>
+        <Flex w={'full'} justifyContent={'space-between'}>
           <HStack spacing={1}>
             <Text fontSize={'sm'} color={'gray.400'}>
               On time completion rate:
             </Text>
             <Text as={'b'} fontSize={'md'} color={'primary.500'}>
-              90%
+              {businessEstimatesData.completionRate}%
             </Text>
           </HStack>
           <Button
@@ -114,7 +126,7 @@ export default function MyBusinessSummary() {
             bgColor={'primary.300'}
             leftIcon={<Icon as={TfiStatsUp} />}
           >
-            2.3%
+            {businessEstimatesData.statRate}%
           </Button>
         </Flex>
       </VStack>
@@ -169,7 +181,7 @@ export default function MyBusinessSummary() {
           />
         </HStack>
         <VStack
-          w={'100%'}
+          w={'full'}
           h={24}
           justifyContent={'center'}
           bgColor={'white'}
@@ -186,7 +198,7 @@ export default function MyBusinessSummary() {
             color={'primary.500'}
             textAlign={'center'}
           >
-            82
+            {teamHours}
           </Text>
         </VStack>
       </VStack>

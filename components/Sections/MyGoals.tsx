@@ -16,7 +16,7 @@ import { BsThreeDots } from 'react-icons/bs';
 export default function MyGoals() {
   return (
     <VStack
-      w={'100%'}
+      w={'full'}
       h={'300px'}
       bgGradient='linear(to-r, primary.300, primary.500)'
       borderRadius={'xl'}

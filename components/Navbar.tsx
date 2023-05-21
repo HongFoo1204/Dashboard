@@ -17,6 +17,7 @@ import {
   Stack,
   VStack,
   Text,
+  Container,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
@@ -68,8 +69,8 @@ export default function Navbar() {
   const companyDesc = 'Organization';
 
   return (
-    <>
-      <Box bg={'white'} px={4}>
+    <Box bg={'white'}>
+      <Container maxW={'container.xl'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={2} alignItems={'center'}>
             <Box
@@ -158,7 +159,7 @@ export default function Navbar() {
             </Stack>
           </Box>
         ) : null}
-      </Box>
-    </>
+      </Container>
+    </Box>
   );
 }

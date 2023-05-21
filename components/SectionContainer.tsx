@@ -10,7 +10,7 @@ export default function SectionContainer(props: SectionContainerProps) {
   const { title, children } = props;
   return (
     <VStack alignItems={'flex-start'} gap={6}>
-      <Heading as='h4' size='md' color={'primary.500'}>
+      <Heading as='h4' size='md' color={'primary.600'}>
         {title}
       </Heading>
       {children}
