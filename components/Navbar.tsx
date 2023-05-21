@@ -1,6 +1,4 @@
-"use client";
-
-import { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode } from 'react';
 import {
   Box,
   Flex,
@@ -19,7 +17,7 @@ import {
   Stack,
   VStack,
   Text,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
@@ -27,20 +25,20 @@ import {
   QuestionOutlineIcon,
   BellIcon,
   SettingsIcon,
-} from "@chakra-ui/icons";
+} from '@chakra-ui/icons';
 
-const Links = ["Dashboard", "Projects", "Team"];
+const Links = ['Information', 'Notifications', 'Cart', 'Settings'];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
     px={2}
     py={1}
-    rounded={"md"}
+    rounded={'md'}
     _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("gray.200", "gray.700"),
+      textDecoration: 'none',
+      bg: useColorModeValue('gray.200', 'gray.700'),
     }}
-    href={"#"}
+    href={'#'}
   >
     {children}
   </Link>
@@ -54,48 +52,52 @@ const NavIconButton = ({
   icon: ReactElement;
 }) => (
   <IconButton
-    aria-label="Setting"
-    rounded={"full"}
+    aria-label='Setting'
+    rounded={'full'}
     icon={icon}
-    bg={"white"}
-    _hover={{ bg: "white" }}
-    _active={{ bg: "white" }}
-    _focus={{ bg: "white" }}
+    bg={'white'}
+    _hover={{ bg: 'white' }}
+    _active={{ bg: 'white' }}
+    _focus={{ bg: 'white' }}
   />
 );
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const userName = "V-Ray Sdn Bhd";
-  const userType = "Organization";
+  const companyName = 'V-Ray Sdn Bhd';
+  const companyDesc = 'Organization';
 
   return (
     <>
-      <Box bg={"white"} px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <HStack spacing={2} alignItems={"center"}>
+      <Box bg={'white'} px={4}>
+        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+          <HStack spacing={2} alignItems={'center'}>
             <Box
-              w={"32px"}
-              h={"32px"}
-              bgColor={"primary.400"}
-              borderRadius={"10px"}
+              w={'32px'}
+              h={'32px'}
+              bgColor={'primary.400'}
+              borderRadius={'md'}
             />
-            <VStack spacing={0} alignItems={"flex-start"}>
-              <Text as="b" fontSize="xs">
-                {userName}
+            <VStack spacing={0} alignItems={'flex-start'}>
+              <Text as='b' fontSize='xs'>
+                {companyName}
               </Text>
-              <Text fontSize="xs">{userType}</Text>
+              <Text fontSize='xs'>{companyDesc}</Text>
             </VStack>
           </HStack>
-          <HStack spacing={2} alignItems={"center"}>
+          <HStack
+            spacing={2}
+            alignItems={'center'}
+            display={{ base: 'none', md: 'flex' }}
+          >
             {/* Create Dropdown */}
             <Menu>
               <MenuButton
                 as={Button}
-                cursor={"pointer"}
-                variant={"solid"}
-                colorScheme={"primary"}
-                size={"sm"}
+                cursor={'pointer'}
+                variant={'solid'}
+                colorScheme={'primary'}
+                size={'sm'}
                 minW={0}
                 rightIcon={<ChevronDownIcon />}
               >
@@ -108,25 +110,25 @@ export default function Navbar() {
             </Menu>
             <HStack spacing={0}>
               <NavIconButton
-                label={"Information"}
+                label={'Information'}
                 icon={<QuestionOutlineIcon />}
               />
-              <NavIconButton label={"Notification"} icon={<BellIcon />} />
-              <NavIconButton label={"Setting"} icon={<SettingsIcon />} />
+              <NavIconButton label={'Notification'} icon={<BellIcon />} />
+              <NavIconButton label={'Setting'} icon={<SettingsIcon />} />
             </HStack>
             {/* User Dropdown */}
             <Menu>
               <MenuButton
                 as={Button}
-                rounded={"full"}
-                variant={"link"}
-                cursor={"pointer"}
+                rounded={'full'}
+                variant={'link'}
+                cursor={'pointer'}
                 minW={0}
               >
                 <Avatar
-                  size={"sm"}
+                  size={'sm'}
                   src={
-                    "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
+                    'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
                   }
                 />
               </MenuButton>
@@ -139,17 +141,17 @@ export default function Navbar() {
             </Menu>
           </HStack>
           <IconButton
-            size={"md"}
+            size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
+            aria-label={'Open Menu'}
+            display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4}>
+          <Box pb={4} display={{ md: 'none' }}>
+            <Stack as={'nav'} spacing={4}>
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}
