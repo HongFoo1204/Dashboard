@@ -18,15 +18,16 @@ import {
   VStack,
   Text,
   Container,
+  Icon,
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
   QuestionOutlineIcon,
-  BellIcon,
-  SettingsIcon,
 } from '@chakra-ui/icons';
+import { MdOutlineSettings, MdOutlineShoppingCart } from 'react-icons/md';
+import { HiOutlineBell } from 'react-icons/hi';
 
 const Links = ['Information', 'Notifications', 'Cart', 'Settings'];
 
@@ -114,8 +115,18 @@ export default function Navbar() {
                 label={'Information'}
                 icon={<QuestionOutlineIcon />}
               />
-              <NavIconButton label={'Notification'} icon={<BellIcon />} />
-              <NavIconButton label={'Setting'} icon={<SettingsIcon />} />
+              <NavIconButton
+                label={'Notification'}
+                icon={<Icon as={HiOutlineBell} />}
+              />
+              <NavIconButton
+                label={'Cart'}
+                icon={<Icon as={MdOutlineShoppingCart} />}
+              />
+              <NavIconButton
+                label={'Setting'}
+                icon={<Icon as={MdOutlineSettings} />}
+              />
             </HStack>
             {/* User Dropdown */}
             <Menu>

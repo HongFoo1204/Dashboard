@@ -1,6 +1,14 @@
-import { CalendarIcon } from '@chakra-ui/icons';
-import { Flex, VStack, Heading, HStack, Text, Image } from '@chakra-ui/react';
+import {
+  Flex,
+  VStack,
+  Heading,
+  HStack,
+  Text,
+  Image,
+  Icon,
+} from '@chakra-ui/react';
 import moment from 'moment';
+import { TbCalendar } from 'react-icons/tb';
 
 export default function WelcomeBanner() {
   const userName = 'John King';
@@ -25,7 +33,7 @@ export default function WelcomeBanner() {
         </Heading>
         <VStack spacing={0} alignItems={'flex-start'}>
           <Text
-            fontSize='xs'
+            fontSize='sm'
             display={'flex'}
             flexDir={'row'}
             alignItems={'baseline'}
@@ -37,13 +45,13 @@ export default function WelcomeBanner() {
             </Text>{' '}
             task of your goal this month !
           </Text>
-          <Text fontSize='xs' color={'white'}>
+          <Text fontSize='sm' color={'white'}>
             Keep it up and improve your result!
           </Text>
         </VStack>
         <HStack spacing={2} color={'white'}>
-          <CalendarIcon />
-          <Text fontSize='sm'>{today}</Text>
+          <Icon boxSize={6} as={TbCalendar} />
+          <Text fontSize='md'>{today}</Text>
         </HStack>
       </VStack>
       <Image
