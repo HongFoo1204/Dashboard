@@ -10,7 +10,7 @@ import {
   Divider,
   Avatar,
   Grid,
-  GridItem,
+  GridItem
 } from '@chakra-ui/react';
 import { TbNotes, TbUser } from 'react-icons/tb';
 import { TfiStatsUp } from 'react-icons/tfi';
@@ -63,7 +63,7 @@ export default function MyBusinessSummary() {
     assigned: 88,
     completed: 120,
     completionRate: 90,
-    statRate: 2.3,
+    statRate: 2.3
   };
   const teamHours = 82;
 
@@ -77,7 +77,7 @@ export default function MyBusinessSummary() {
       borderRadius={'xl'}
       boxShadow={'md'}
     >
-      <VStack w={'full'} spacing={6} alignItems={'flex-start'}>
+      <VStack w={'60%'} spacing={6} alignItems={'flex-start'}>
         <HStack spacing={4}>
           <Icon as={TbNotes} boxSize={6} />
           <Heading as='h5' size='sm'>
@@ -130,8 +130,8 @@ export default function MyBusinessSummary() {
           </Button>
         </Flex>
       </VStack>
-      <Divider orientation='vertical' borderColor={'gray.500'} />
-      <VStack spacing={4} alignItems={'flex-start'}>
+      <Divider orientation='vertical' borderColor='gray.500' />
+      <VStack w='40%' spacing={4} alignItems='flex-start' overflow='hidden'>
         <HStack spacing={4}>
           <Icon as={TbUser} boxSize={6} />
           <Heading as='h5' size='sm'>
@@ -141,44 +141,16 @@ export default function MyBusinessSummary() {
         <Text fontSize={'sm'} color={'gray.500'}>
           Team members
         </Text>
-        <HStack spacing={'-2'}>
+        <HStack spacing={-2}>
           {/* TODO: Use Array Mapping*/}
-          <Avatar
-            size={'md'}
-            src={
-              'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-            }
-          />
-          <Avatar
-            size={'md'}
-            src={
-              'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-            }
-          />
-          <Avatar
-            size={'md'}
-            src={
-              'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-            }
-          />
-          <Avatar
-            size={'md'}
-            src={
-              'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-            }
-          />
-          <Avatar
-            size={'md'}
-            src={
-              'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-            }
-          />
-          <Avatar
-            size={'md'}
-            src={
-              'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
-            }
-          />
+          {[...Array(6)].map((_, i) => (
+            <Avatar
+              key={`avatar-${i}`}
+              src={
+                'https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9'
+              }
+            />
+          ))}
         </HStack>
         <VStack
           w={'full'}

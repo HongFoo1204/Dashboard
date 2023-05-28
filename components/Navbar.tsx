@@ -18,13 +18,13 @@ import {
   VStack,
   Text,
   Container,
-  Icon,
+  Icon
 } from '@chakra-ui/react';
 import {
   HamburgerIcon,
   CloseIcon,
   ChevronDownIcon,
-  QuestionOutlineIcon,
+  QuestionOutlineIcon
 } from '@chakra-ui/icons';
 import { MdOutlineSettings, MdOutlineShoppingCart } from 'react-icons/md';
 import { HiOutlineBell } from 'react-icons/hi';
@@ -38,7 +38,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      bg: useColorModeValue('gray.200', 'gray.700')
     }}
     href={'#'}
   >
@@ -48,7 +48,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 
 const NavIconButton = ({
   label,
-  icon,
+  icon
 }: {
   label: string;
   icon: ReactElement;

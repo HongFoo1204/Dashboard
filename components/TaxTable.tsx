@@ -11,13 +11,13 @@ import {
   Td,
   IconButton,
   Text,
-  Box,
+  Box
 } from '@chakra-ui/react';
 import {
   BsFolder2,
   BsClipboard,
   BsFiletypePdf,
-  BsDownload,
+  BsDownload
 } from 'react-icons/bs';
 import { CiFileOn } from 'react-icons/ci';
 
@@ -25,7 +25,7 @@ const tableHeaderList = [
   { name: 'Financial Year', icon: <CalendarIcon mr={3} /> },
   { name: 'File Name', icon: <Icon as={BsFolder2} mr={3} /> },
   { name: 'Description', icon: <Icon as={CiFileOn} mr={3} /> },
-  { name: 'Remark', icon: <Icon as={BsClipboard} mr={3} /> },
+  { name: 'Remark', icon: <Icon as={BsClipboard} mr={3} /> }
 ];
 
 const tableItemList = [
@@ -33,38 +33,38 @@ const tableItemList = [
     financialsYear: 'December, 2021',
     fileName: 'Annual Report 2021',
     desc: 'Prepared by James Woon & Elly Yao',
-    remark: 'Remark tag 1',
+    remark: 'Remark tag 1'
   },
   {
     financialsYear: 'December, 2019',
     fileName: 'Annual Report 2019',
     desc: 'Prepared by Cheung Sue Hui',
-    remark: 'Remark tag 2',
+    remark: 'Remark tag 2'
   },
   {
     financialsYear: 'December, 2021',
     fileName: 'Annual Report 2021',
     desc: 'Checked by Alan Yong @ Executive',
-    remark: 'Remark tag 3',
+    remark: 'Remark tag 3'
   },
   {
     financialsYear: 'December, 2017',
     fileName: 'Annual Report 2017',
     desc: 'Prepared by Elly Yao',
-    remark: 'Remark tag 3',
+    remark: 'Remark tag 3'
   },
   {
     financialsYear: 'December, 2016',
     fileName: 'Annual Report 2016',
     desc: 'Prepared by James Woon',
-    remark: 'Remark tag 3',
+    remark: 'Remark tag 3'
   },
   {
     financialsYear: 'December, 2015',
     fileName: 'Annual Report 2015',
     desc: 'Prepared by James Woon & Elly Yao',
-    remark: 'Remark tag 3',
-  },
+    remark: 'Remark tag 3'
+  }
 ];
 
 const RemarkTag = ({ remark }: { remark: string }) => (
@@ -86,7 +86,13 @@ const RemarkTag = ({ remark }: { remark: string }) => (
 
 export default function TaxTable() {
   return (
-    <TableContainer mt={10}>
+    <TableContainer
+      mt={10}
+      border={'1px'}
+      borderColor={'gray.200'}
+      borderRadius={'xl'}
+      boxShadow={'md'}
+    >
       <Table variant='simple'>
         <Thead>
           <Tr>

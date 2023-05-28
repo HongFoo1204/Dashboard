@@ -5,7 +5,7 @@ import {
   HStack,
   Text,
   Image,
-  Icon,
+  Icon
 } from '@chakra-ui/react';
 import moment from 'moment';
 import { TbCalendar } from 'react-icons/tb';

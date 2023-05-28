@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
     "@chakra-ui/next-js": "^2.1.3",
     "@chakra-ui/react": "^2.6.1",
+    "@chakra-ui/system": "^2.5.7",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@types/node": "20.2.1",
@@ -19,6 +22,7 @@
     "@types/react-dom": "18.2.4",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
+    "eslint-config-prettier": "^8.8.0",
     "framer-motion": "^10.12.12",
     "moment": "^2.29.4",
     "next": "13.4.3",
@@ -26,5 +30,12 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "lint-staged": "^13.2.2",
+    "prettier": "2.8.8"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

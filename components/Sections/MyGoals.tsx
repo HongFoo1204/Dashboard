@@ -8,7 +8,7 @@ import {
   Image,
   MenuList,
   MenuItem,
-  Text,
+  Text
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { BsThreeDots } from 'react-icons/bs';

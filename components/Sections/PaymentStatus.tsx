@@ -6,7 +6,7 @@ import {
   Image,
   Progress,
   Text,
-  VStack,
+  VStack
 } from '@chakra-ui/react';
 import moment from 'moment';
 import { ReactNode } from 'react';
@@ -27,17 +27,19 @@ const quotationList: QuotationItem[] = [
     imgSrc: '/icons/icon-3.png',
     title: 'Closed',
     value: 27300,
-    currency: 'RM',
-  },
+    currency: 'RM'
+  }
 ];
 
 const PaymentStatusItem = ({ children }: { children: ReactNode }) => (
   <VStack
+    h='174px'
     spacing={2}
-    border={'2px'}
-    borderColor={'primary.100'}
-    borderRadius={'2xl'}
+    border='2px'
+    borderColor='primary.100'
+    borderRadius='2xl'
     p={5}
+    justifyContent='center'
   >
     {children}
   </VStack>
@@ -50,7 +52,11 @@ export default function PaymentStatus() {
   return (
     <Grid
       w={'full'}
-      templateColumns='repeat(5, 1fr)'
+      templateColumns={{
+        base: 'repeat(2, 1fr)',
+        md: 'repeat(4, 1fr)',
+        lg: 'repeat(5, 1fr)'
+      }}
       gap={6}
       bgColor={'white'}
       borderRadius={'xl'}
@@ -105,7 +111,7 @@ export default function PaymentStatus() {
       </GridItem>
       {/* My Annual Revenue Target */}
       {/* TODO: replace with data */}
-      <GridItem colSpan={3}>
+      <GridItem colSpan={[2, 3]}>
         <Grid
           templateColumns='repeat(5, 1fr)'
           h={'187px'}
@@ -146,8 +152,8 @@ export default function PaymentStatus() {
                   RM 89,300 - RM 500,000
                 </Text>
               </VStack>
-              <VStack w={'full'}>
-                <HStack w={'full'} justifyContent={'space-between'} pt={4}>
+              <VStack w={'full'} pt={{ base: 2, lg: 4 }}>
+                <HStack w={'full'} justifyContent={'space-between'}>
                   <Text
                     fontSize={'xs'}
                     color={'primary.500'}

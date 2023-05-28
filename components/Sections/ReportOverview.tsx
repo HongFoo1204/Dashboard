@@ -6,7 +6,7 @@ import {
   TabPanels,
   TabPanel,
   Text,
-  Box,
+  Box
 } from '@chakra-ui/react';
 import TaxTable from '../TaxTable';
 
@@ -41,7 +41,7 @@ export default function ReportOverview() {
             <p>two!</p>
           </TabPanel>
           <TabPanel>
-            <Text fontSize={'md'} color={'gray.400'}>
+            <Text fontSize={'md'} color={'gray.400'} mt={4} mb={8}>
               Taxpayers file infomation about his income earned and tax
               applicable to the income tax department.
             </Text>
