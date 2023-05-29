@@ -10,7 +10,8 @@ import {
   Divider,
   Avatar,
   Grid,
-  GridItem
+  GridItem,
+  Stack
 } from '@chakra-ui/react';
 import { TbNotes, TbUser } from 'react-icons/tb';
 import { TfiStatsUp } from 'react-icons/tfi';
@@ -68,16 +69,20 @@ export default function MyBusinessSummary() {
   const teamHours = 82;
 
   return (
-    <HStack
+    <Stack
+      direction={{ base: 'column', md: 'row' }}
       w={'full'}
-      h={'300px'}
       spacing={4}
       p={6}
       bgColor={'white'}
       borderRadius={'xl'}
       boxShadow={'md'}
     >
-      <VStack w={'60%'} spacing={6} alignItems={'flex-start'}>
+      <VStack
+        w={{ base: '100%', md: '60%' }}
+        spacing={6}
+        alignItems={'flex-start'}
+      >
         <HStack spacing={4}>
           <Icon as={TbNotes} boxSize={6} />
           <Heading as='h5' size='sm'>
@@ -130,8 +135,22 @@ export default function MyBusinessSummary() {
           </Button>
         </Flex>
       </VStack>
-      <Divider orientation='vertical' borderColor='gray.500' />
-      <VStack w='40%' spacing={4} alignItems='flex-start' overflow='hidden'>
+      <Divider
+        display={{ base: 'none', md: 'block' }}
+        orientation='vertical'
+        borderColor='gray.500'
+      />
+      <Divider
+        display={{ base: 'block', md: 'none' }}
+        orientation='horizontal'
+        borderColor='gray.500'
+      />
+      <VStack
+        w={{ base: '100%', md: '40%' }}
+        spacing={4}
+        alignItems='flex-start'
+        overflow='hidden'
+      >
         <HStack spacing={4}>
           <Icon as={TbUser} boxSize={6} />
           <Heading as='h5' size='sm'>
@@ -174,6 +193,6 @@ export default function MyBusinessSummary() {
           </Text>
         </VStack>
       </VStack>
-    </HStack>
+    </Stack>
   );
 }

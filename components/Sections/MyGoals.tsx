@@ -26,7 +26,6 @@ export default function MyGoals() {
       position={'relative'}
     >
       <Image
-        display={{ base: 'none', sm: 'block' }}
         boxSize='180px'
         objectFit='cover'
         overflow='visible'

@@ -13,7 +13,7 @@ import TaxTable from '../TaxTable';
 export default function ReportOverview() {
   return (
     <Box w={'full'}>
-      <Tabs colorScheme='primary' defaultIndex={2}>
+      <Tabs size='sm' colorScheme='primary' defaultIndex={2}>
         <TabList>
           <Tab bgColor={'white'} borderTopRadius={'2xl'} p={4}>
             Company&apos;s Stautory Documents
